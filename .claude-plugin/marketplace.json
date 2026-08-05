@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "outagedeck",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OutageDeck plugins for checking cloud and SaaS incidents before changing code",
   "owner": {
     "name": "OutageDeck",
@@ -12,7 +12,7 @@
       "name": "outagedeck",
       "displayName": "OutageDeck",
       "description": "Check live cloud and SaaS incidents before debugging code.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "OutageDeck",
         "email": "hello@outagedeck.com"

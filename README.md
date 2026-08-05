@@ -22,6 +22,16 @@ claude plugin install outagedeck@outagedeck
 
 Start a new session after installation.
 
+## Install the portable Agent Skill
+
+For Codex, Claude Code, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Cline, and other compatible agents:
+
+```sh
+npx skills add https://github.com/outagedeck/codex-plugins --skill triage-dependency-outages
+```
+
+[View the skill, install command, and security audit on skills.sh](https://www.skills.sh/outagedeck/codex-plugins/triage-dependency-outages). The full Codex or Claude Code plugin is recommended because it bundles the 14-tool MCP server; the portable skill falls back to OutageDeck's anonymous REST API for current status and incident evidence.
+
 Try:
 
 - “Before changing code, check AWS, Cloudflare, GitHub, and OpenAI.”

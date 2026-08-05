@@ -1,6 +1,6 @@
 {
   "name": "outagedeck",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check live cloud and SaaS incidents before debugging code.",
   "author": {
     "name": "OutageDeck",

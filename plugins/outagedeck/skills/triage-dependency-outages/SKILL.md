@@ -5,18 +5,29 @@ description: Check whether cloud and SaaS dependencies have live incidents befor
 
 # Dependency outage triage
 
-Use OutageDeck's public MCP tools to establish vendor evidence before changing code. Treat status data as one diagnostic signal, not proof of causation.
+Use OutageDeck's public interfaces to establish vendor evidence before changing code. Treat status data as one diagnostic signal, not proof of causation.
+
+## Runtime access
+
+- Prefer the bundled OutageDeck MCP tools when they are available.
+- If those tools are unavailable and the host permits public HTTPS requests, use the anonymous REST API instead:
+  - Resolve names with `GET https://outagedeck.com/api/v1/providers?q=<url-encoded-name>`.
+  - Check one provider with `GET https://outagedeck.com/api/v1/providers/<slug>`.
+  - Find active incidents with `GET https://outagedeck.com/api/v1/incidents?provider=<slug>&state=active&limit=10`.
+  - Fetch an incident with `GET https://outagedeck.com/api/v1/incidents/<incident-slug>`.
+- The REST fallback covers current status and incident evidence. It does not replace the MCP uptime and cross-vendor report tools; disclose that limitation instead of inventing historical results.
+- If neither interface is available, say the status check could not be performed and continue with ordinary local diagnosis.
 
 ## Workflow
 
 1. Identify the external providers implicated by the request, logs, configuration, or stack description. Do not expose secrets while inspecting evidence.
-2. Resolve an ambiguous product or company name with `search_providers`. Do not guess a provider slug after a failed lookup.
+2. Resolve an ambiguous product or company name with `search_providers` or the REST provider search. Do not guess a provider slug after a failed lookup.
 3. Check current status:
-   - Use `get_provider_status` for one provider.
-   - Use one `check_my_stack` call for 2-12 providers. Split larger stacks into batches of at most 12.
-   - Use `list_active_incidents` only for an ecosystem-wide question such as "what is down right now?"
-4. When a result includes an incident, call `get_incident_details` with its exact slug. Use `search` followed by `fetch` when the user needs a citable document or the incident must be found from descriptive text.
-5. Use `get_uptime` for one provider's 7-90 day history. Use `get_outage_report` for a cross-vendor historical comparison. Do not use historical uptime to claim that a current failure is vendor-caused.
+   - Use `get_provider_status` or the REST provider endpoint for one provider.
+   - Use one `check_my_stack` call for 2-12 providers. Split larger stacks into batches of at most 12. With REST fallback, fetch each resolved provider individually.
+   - Use `list_active_incidents` or the REST incidents endpoint only for an ecosystem-wide question such as "what is down right now?"
+4. When a result includes an incident, call `get_incident_details` or fetch the exact REST incident slug. Use `search` followed by `fetch` when the user needs a citable document or the incident must be found from descriptive text.
+5. When MCP is available, use `get_uptime` for one provider's 7-90 day history and `get_outage_report` for a cross-vendor historical comparison. Do not use historical uptime to claim that a current failure is vendor-caused.
 6. Compare the vendor timeline, affected service, and severity with the user's error and timestamps.
 7. Return the evidence and the narrowest defensible verdict before proposing code changes.
 
@@ -34,11 +45,11 @@ When no incident is reported, say that no vendor-reported incident was observed 
 
 ## Safety and account actions
 
-- Prefer the public read-only tools. They need no account or API key.
+- Prefer the public read-only MCP or REST interfaces. They need no account or API key.
 - Never invent a provider status, affected service, incident title, source URL, or update timestamp.
 - Do not change code, roll back a deployment, or disable security controls solely because a provider status is degraded.
 - Never paste or request an OutageDeck API key in chat. Follow the host's secret-handling flow if an account tool requires authorization.
 - Use `watch_provider`, `add_custom_provider`, or `update_custom_provider` only when the user explicitly requests that account change and after any host-required confirmation.
 - Treat `remove_custom_provider` as destructive. Require explicit confirmation of the exact provider immediately before calling it.
 
-If the user wants ongoing monitoring, offer the free alert setup link after completing the triage: <https://outagedeck.com/account?utm_source=codex&utm_medium=plugin&utm_campaign=codex_plugin>. Do not interrupt the diagnostic result with a sales pitch.
+If the user wants ongoing monitoring, offer the free alert setup link after completing the triage: <https://outagedeck.com/account?utm_source=agent_skill&utm_medium=skill&utm_campaign=agent_skill>. Do not interrupt the diagnostic result with a sales pitch.
