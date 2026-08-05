@@ -1,0 +1,12 @@
+interface:
+  display_name: "Dependency Outage Triage"
+  short_description: "Check vendor incidents before changing code"
+  default_prompt: "Use $triage-dependency-outages to check my stack before I debug this failure."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "outagedeck"
+      description: "Live status and incident evidence for cloud and SaaS providers"
+      transport: "streamable_http"
+      url: "https://outagedeck.com/api/mcp"

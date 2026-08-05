@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "outagedeck": {
+      "type": "http",
+      "url": "https://outagedeck.com/api/mcp"
+    }
+  }
+}

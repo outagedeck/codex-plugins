@@ -1,0 +1,48 @@
+{
+  "name": "outagedeck",
+  "version": "0.1.0",
+  "description": "Check live cloud and SaaS incidents before debugging code.",
+  "author": {
+    "name": "OutageDeck",
+    "email": "hello@outagedeck.com",
+    "url": "https://outagedeck.com"
+  },
+  "homepage": "https://outagedeck.com/developers/mcp?utm_source=codex&utm_medium=plugin&utm_campaign=codex_plugin",
+  "repository": "https://github.com/outagedeck/codex-plugins",
+  "license": "MIT",
+  "keywords": [
+    "cloud",
+    "incident-response",
+    "mcp",
+    "monitoring",
+    "outage",
+    "sre",
+    "status"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "OutageDeck",
+    "shortDescription": "Check vendor outages before changing code",
+    "longDescription": "Check live status, incident timelines, and independent uptime history for 172 cloud and SaaS vendors before changing code. Public OutageDeck tools are read-only, free, and require no account. The bundled triage workflow turns vendor evidence into a citable is-it-us-or-them verdict and concrete next steps.",
+    "developerName": "OutageDeck",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://outagedeck.com",
+    "privacyPolicyURL": "https://outagedeck.com/privacy",
+    "termsOfServiceURL": "https://outagedeck.com/terms",
+    "defaultPrompt": [
+      "Before changing code, check whether my cloud and SaaS dependencies are having incidents.",
+      "Is this 503 from my app or from AWS, Cloudflare, GitHub, or OpenAI?",
+      "Create a citable incident brief for the active provider outage."
+    ],
+    "brandColor": "#0F4C81",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

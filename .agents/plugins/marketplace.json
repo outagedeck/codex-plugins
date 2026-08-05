@@ -1,0 +1,20 @@
+{
+  "name": "outagedeck",
+  "interface": {
+    "displayName": "OutageDeck"
+  },
+  "plugins": [
+    {
+      "name": "outagedeck",
+      "source": {
+        "source": "local",
+        "path": "./plugins/outagedeck"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
