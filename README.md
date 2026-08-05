@@ -30,6 +30,7 @@ The public tools do not modify external state. Account tools require authorizati
 ## Links
 
 - [OutageDeck MCP documentation](https://outagedeck.com/developers/mcp?utm_source=github&utm_medium=repository&utm_campaign=codex_plugin)
+- [Codex community Show and tell](https://github.com/openai/codex/discussions/37064)
 - [Create a free vendor alert](https://outagedeck.com/account?utm_source=github&utm_medium=repository&utm_campaign=codex_plugin)
 - [Plans](https://outagedeck.com/pricing?utm_source=github&utm_medium=repository&utm_campaign=codex_plugin)
 
