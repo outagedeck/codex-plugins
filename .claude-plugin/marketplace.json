@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "outagedeck",
+  "version": "1.0.0",
+  "description": "OutageDeck plugins for checking cloud and SaaS incidents before changing code",
+  "owner": {
+    "name": "OutageDeck",
+    "email": "hello@outagedeck.com"
+  },
+  "plugins": [
+    {
+      "name": "outagedeck",
+      "displayName": "OutageDeck",
+      "description": "Check live cloud and SaaS incidents before debugging code.",
+      "version": "0.1.0",
+      "author": {
+        "name": "OutageDeck",
+        "email": "hello@outagedeck.com"
+      },
+      "source": "./plugins/outagedeck",
+      "category": "development",
+      "homepage": "https://outagedeck.com/developers/mcp?utm_source=claude&utm_medium=plugin&utm_campaign=claude_plugin"
+    }
+  ]
+}

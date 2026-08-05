@@ -16,13 +16,19 @@ def load_json(path: Path):
 
 
 marketplace = load_json(ROOT / ".agents" / "plugins" / "marketplace.json")
+claude_marketplace = load_json(ROOT / ".claude-plugin" / "marketplace.json")
 manifest = load_json(PLUGIN / ".codex-plugin" / "plugin.json")
+claude_manifest = load_json(PLUGIN / ".claude-plugin" / "plugin.json")
 mcp = load_json(PLUGIN / ".mcp.json")
 skill_path = PLUGIN / "skills" / "triage-dependency-outages" / "SKILL.md"
 skill = skill_path.read_text(encoding="utf-8")
 
 assert marketplace["name"] == "outagedeck"
 assert marketplace["plugins"][0]["name"] == manifest["name"] == "outagedeck"
+assert claude_marketplace["name"] == "outagedeck"
+assert claude_marketplace["plugins"][0]["name"] == "outagedeck"
+assert claude_manifest["name"] == manifest["name"]
+assert claude_manifest["version"] == manifest["version"]
 assert re.fullmatch(r"\d+\.\d+\.\d+", manifest["version"])
 assert manifest["skills"] == "./skills/"
 assert manifest["mcpServers"] == "./.mcp.json"

@@ -1,10 +1,10 @@
-# OutageDeck for Codex
+# OutageDeck for Codex and Claude Code
 
-Check cloud and SaaS incidents before changing code. This marketplace installs the OutageDeck MCP server and a dependency-outage triage skill in Codex.
+Check cloud and SaaS incidents before changing code. This marketplace installs the OutageDeck MCP server and a dependency-outage triage skill in Codex or Claude Code.
 
 Public status checks are read-only, free, and require no account or API key. OutageDeck tracks 172 providers from their official status feeds and adds independent uptime history.
 
-## Install
+## Install in Codex
 
 ```sh
 codex plugin marketplace add outagedeck/codex-plugins
@@ -12,6 +12,15 @@ codex
 ```
 
 Run `/plugins`, choose the **OutageDeck** marketplace, install **OutageDeck**, and start a new session.
+
+## Install in Claude Code
+
+```sh
+claude plugin marketplace add outagedeck/codex-plugins
+claude plugin install outagedeck@outagedeck
+```
+
+Start a new session after installation.
 
 Try:
 

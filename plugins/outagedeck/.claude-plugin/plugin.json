@@ -1,0 +1,21 @@
+{
+  "name": "outagedeck",
+  "version": "0.1.0",
+  "description": "Check live cloud and SaaS incidents before debugging code.",
+  "author": {
+    "name": "OutageDeck",
+    "email": "hello@outagedeck.com"
+  },
+  "homepage": "https://outagedeck.com/developers/mcp?utm_source=claude&utm_medium=plugin&utm_campaign=claude_plugin",
+  "repository": "https://github.com/outagedeck/codex-plugins",
+  "license": "MIT",
+  "keywords": [
+    "cloud",
+    "incident-response",
+    "mcp",
+    "monitoring",
+    "outage",
+    "sre",
+    "status"
+  ]
+}
