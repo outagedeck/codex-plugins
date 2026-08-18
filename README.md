@@ -2,7 +2,7 @@
 
 Check cloud and SaaS incidents before changing code. This marketplace installs the OutageDeck MCP server and a dependency-outage triage skill in Codex or Claude Code.
 
-Public status checks are read-only, free, and require no account or API key. OutageDeck tracks 172 providers from their official status feeds and adds independent uptime history.
+Public status checks are read-only, free, and require no account or API key. OutageDeck normalizes official machine-readable status feeds from cloud and SaaS vendors and adds observed uptime history.
 
 ## Install in Codex
 
