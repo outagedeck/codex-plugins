@@ -1,7 +1,7 @@
 {
   "name": "outagedeck",
   "version": "0.1.1",
-  "description": "Check live cloud and SaaS incidents before debugging code.",
+  "description": "Check vendor-published cloud and SaaS incidents before debugging code.",
   "author": {
     "name": "OutageDeck",
     "email": "hello@outagedeck.com",
@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "OutageDeck",
     "shortDescription": "Check vendor outages before changing code",
-    "longDescription": "Check live status, incident timelines, and independent uptime history for 172 cloud and SaaS vendors before changing code. Public OutageDeck tools are read-only, free, and require no account. The bundled triage workflow turns vendor evidence into a citable is-it-us-or-them verdict and concrete next steps.",
+    "longDescription": "Check vendor-published status, incident timelines, and observed uptime history for cloud and SaaS vendors before changing code. Public OutageDeck tools are read-only, free, and require no account. The bundled triage workflow turns vendor evidence into a citable is-it-us-or-them verdict and concrete next steps.",
     "developerName": "OutageDeck",
     "category": "Developer Tools",
     "capabilities": [

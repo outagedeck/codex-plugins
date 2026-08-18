@@ -1,6 +1,6 @@
 ---
 name: triage-dependency-outages
-description: Check whether cloud and SaaS dependencies have live incidents before debugging application, CI, deployment, API, authentication, or network failures. Use when a user asks whether a provider is down, reports 5xx responses, timeouts, rate limits, or unexplained integration failures, needs a vendor incident timeline, wants a stack-wide status check or uptime comparison, or needs evidence to distinguish a provider failure from a code regression. Do not use for a clearly local-only failure with no external dependency.
+description: Check whether cloud and SaaS dependencies are reporting incidents before debugging application, CI, deployment, API, authentication, or network failures. Use when a user asks whether a provider is down, reports 5xx responses, timeouts, rate limits, or unexplained integration failures, needs a vendor incident timeline, wants a stack-wide status check or uptime comparison, or needs evidence to distinguish a provider failure from a code regression. Do not use for a clearly local-only failure with no external dependency.
 ---
 
 # Dependency outage triage

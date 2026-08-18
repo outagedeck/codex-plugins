@@ -7,6 +7,6 @@ dependencies:
   tools:
     - type: "mcp"
       value: "outagedeck"
-      description: "Live status and incident evidence for cloud and SaaS providers"
+      description: "Vendor-published status and incident evidence for cloud and SaaS providers"
       transport: "streamable_http"
       url: "https://outagedeck.com/api/mcp"
